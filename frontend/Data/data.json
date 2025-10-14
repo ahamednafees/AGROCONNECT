@@ -1,26 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "fullName": "Rajesh Kumar",
-      "email": "farmer@test.com",
-      "phone": "9876543210",
-      "address": "Village Rampur, Jalandhar, Punjab",
-      "password": "farmer123",
-      "userType": "farmer",
-      "createdAt": "2024-10-01T10:30:00Z"
-    },
-    {
-      "id": "2",
-      "fullName": "Priya Sharma",
-      "email": "customer@test.com",
-      "phone": "9123456789",
-      "address": "Sector 21, Chandigarh",
-      "password": "customer123",
-      "userType": "customer",
-      "createdAt": "2024-10-05T14:20:00Z"
-    },
-    {
       "id": "fe5f",
       "fullName": "gokul",
       "email": "24csa31@karpagamtech.ac.in",
@@ -39,6 +19,46 @@
       "password": "123456",
       "userType": "seller",
       "createdAt": "2025-10-14T10:02:56.000Z"
+    },
+    {
+      "id": "3320",
+      "fullName": "nafee",
+      "email": "24csa03@gmail.com",
+      "phone": "1234567892",
+      "address": "12,ghfjjh",
+      "password": "123456",
+      "userType": "seller",
+      "createdAt": "2025-10-14T10:26:58.342Z"
+    },
+    {
+      "id": "503b",
+      "fullName": "dhara",
+      "email": "24csa25@karpagamtech.ac.in",
+      "phone": "9965118615",
+      "address": "11/147,annainagar ganapathipalayam,Tiruppur",
+      "password": "123456",
+      "userType": "seller",
+      "createdAt": "2025-10-14T11:02:46.311Z"
+    },
+    {
+      "id": "7c1e",
+      "fullName": "gokul",
+      "email": "student1@example.com",
+      "phone": "9876543210",
+      "address": "123,Address",
+      "password": "123456",
+      "userType": "seller",
+      "createdAt": "2025-10-14T14:38:38.872Z"
+    },
+    {
+      "id": "7b55",
+      "fullName": "Ram",
+      "email": "ramu762@gmail.com",
+      "phone": "7878785555",
+      "address": "Chennai",
+      "password": "123456",
+      "userType": "buyer",
+      "createdAt": "2025-10-14T14:50:53.284Z"
     }
   ],
   "products": [
@@ -95,6 +115,42 @@
       "farmer": "Ramesh Yadav",
       "rating": 4.4,
       "location": "Uttar Pradesh"
+    },
+    {
+      "id": "c864",
+      "name": "banana",
+      "price": "₹50/kg",
+      "image": "🍌",
+      "farmer": "nafee",
+      "rating": 5,
+      "location": "ghfjjh"
+    },
+    {
+      "id": "d0fd",
+      "name": "rice",
+      "price": "₹75/kg",
+      "image": "🌾",
+      "farmer": "nafee",
+      "rating": 4.5,
+      "location": "ghfjjh"
+    },
+    {
+      "id": "8708",
+      "name": "grapes",
+      "price": "₹100/kg",
+      "image": "🍇",
+      "farmer": "dhara",
+      "rating": 4.5,
+      "location": "Tiruppur"
+    },
+    {
+      "id": "f12f",
+      "name": "Apple",
+      "price": "₹50/kg",
+      "image": "🍎",
+      "farmer": "Raja",
+      "rating": 4.5,
+      "location": "Address"
     }
   ],
   "testimonials": [
@@ -121,6 +177,47 @@
       "text": "Quality products, quick delivery, and supporting local farmers. What more could I ask for?",
       "rating": 5,
       "avatar": "👩‍💼"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "c669",
+      "name": "John Deere Tractor 5055E",
+      "type": "Tractor",
+      "price": "₹2000/day",
+      "image": "🚜",
+      "owner": "Raja",
+      "rating": 4.5,
+      "location": "Address",
+      "specifications": "55HP, 4WD, Perfect for heavy farming",
+      "condition": "Excellent",
+      "available": true
+    },
+    {
+      "id": "eq1",
+      "name": "Mahindra Harvester Pro",
+      "type": "Harvester",
+      "price": "₹3500/day",
+      "image": "🌾",
+      "owner": "dhara",
+      "rating": 4.7,
+      "location": "Tiruppur",
+      "specifications": "Combine harvester, 20 acres/day capacity, Well-maintained",
+      "condition": "Good",
+      "available": true
+    },
+    {
+      "id": "eq2",
+      "name": "Heavy Duty Transport Truck",
+      "type": "Truck",
+      "price": "₹1500/day",
+      "image": "🚚",
+      "owner": "nafee",
+      "rating": 4.6,
+      "location": "ghfjjh",
+      "specifications": "10-ton capacity, Perfect for transportation, GPS tracking",
+      "condition": "Excellent",
+      "available": true
     }
   ]
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+import toast, { Toaster } from "react-hot-toast";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 
@@ -10,7 +11,48 @@ const Home = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log("Searching for:", searchQuery);
+    if (searchQuery.trim()) {
+      console.log("Searching for:", searchQuery);
+      toast.success(`Searching for "${searchQuery}"...`, {
+        icon: "🔍",
+        duration: 2000,
+      });
+    } else {
+      toast.error("Please enter a search term", {
+        icon: "⚠️",
+        duration: 2000,
+      });
+    }
+  };
+
+  const handleGetStarted = () => {
+    toast.success("Welcome to AgroConnect! Let's create your account.", {
+      icon: "🎉",
+      duration: 2500,
+    });
+    setTimeout(() => navigate("/signup"), 1000);
+  };
+
+  const handleLearnMore = () => {
+    toast.info("Scroll down to learn more about our features!", {
+      icon: "ℹ️",
+      duration: 2000,
+    });
+    // Smooth scroll to features section
+    document.querySelector(".features-section")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
+  const handleNavigation = (path, message) => {
+    if (message) {
+      toast.loading(message, {
+        duration: 1000,
+      });
+    }
+    setTimeout(() => {
+      navigate(path);
+    }, 1000);
   };
 
   return (
@@ -85,11 +127,14 @@ const Home = () => {
               <div className="hero-buttons">
                 <button
                   className="btn btn-primary btn-lg"
-                  onClick={() => navigate("/signup")}
+                  onClick={handleGetStarted}
                 >
                   Get Started
                 </button>
-                <button className="btn btn-outline-primary btn-lg">
+                <button
+                  className="btn btn-outline-primary btn-lg"
+                  onClick={handleLearnMore}
+                >
                   Learn More
                 </button>
               </div>
@@ -98,6 +143,28 @@ const Home = () => {
               <div className="hero-image">
                 <span className="hero-emoji">🌾</span>
               </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Search Section */}
+      <section className="search-section py-5">
+        <Container>
+          <Row className="justify-content-center">
+            <Col md={8}>
+              <form className="d-flex" onSubmit={handleSearch}>
+                <input
+                  type="text"
+                  className="form-control me-2"
+                  placeholder="Search for products, farmers..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <button className="btn btn-success" type="submit">
+                  Search
+                </button>
+              </form>
             </Col>
           </Row>
         </Container>
@@ -141,6 +208,8 @@ const Home = () => {
           </div>
         </Container>
       </footer>
+
+      <Toaster />
     </div>
   );
 };

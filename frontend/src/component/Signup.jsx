@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Signup.css";
 
@@ -9,7 +10,6 @@ const Signup = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get user type from navigation state or default to 'buyer'
   const initialUserType = location.state?.userType || "buyer";
 
   const [activeTab, setActiveTab] = useState(initialUserType);
@@ -26,7 +26,6 @@ const Signup = () => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
-  // Update active tab if user type is passed from UserType page
   useEffect(() => {
     if (location.state?.userType) {
       setActiveTab(location.state.userType);
@@ -39,7 +38,6 @@ const Signup = () => {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors({ ...errors, [name]: "" });
     }
@@ -47,7 +45,6 @@ const Signup = () => {
 
   const handleTabChange = (tabType) => {
     setActiveTab(tabType);
-    // Clear any tab-related errors
     if (errors.userType) {
       setErrors({ ...errors, userType: "" });
     }
@@ -101,7 +98,6 @@ const Signup = () => {
       setLoading(true);
 
       try {
-        // Check if email already exists
         const existingUsersResponse = await axios.get(
           "http://localhost:3000/users"
         );
@@ -116,24 +112,29 @@ const Signup = () => {
             email:
               "This email is already registered. Please use a different email or login.",
           });
+          toast.error(
+            "Email already registered! Please use a different email.",
+            {
+              icon: "❌",
+              duration: 4000,
+            }
+          );
           setLoading(false);
           return;
         }
 
-        // Prepare data to send to backend with the selected user type
         const userData = {
           fullName: formData.fullName,
           email: formData.email,
           phone: formData.phone,
           address: formData.address,
           password: formData.password,
-          userType: activeTab, // This will be either 'buyer' or 'seller'
+          userType: activeTab,
           createdAt: new Date().toISOString(),
         };
 
         console.log("Registering user with data:", userData);
 
-        // POST request to backend
         const response = await axios.post(
           "http://localhost:3000/users",
           userData,
@@ -146,12 +147,19 @@ const Signup = () => {
 
         console.log("Signup successful:", response.data);
 
-        // Show success message with user type
-        alert(
-          `🎉 Registration successful as ${activeTab.toUpperCase()}!\n\nYou can now login with your credentials.`
+        toast.success(
+          `Registration successful as ${activeTab.toUpperCase()}! Redirecting to login...`,
+          {
+            icon: "🎉",
+            duration: 3000,
+            style: {
+              border: "2px solid #4caf50",
+              padding: "16px",
+              fontWeight: "bold",
+            },
+          }
         );
 
-        // Clear form
         setFormData({
           fullName: "",
           email: "",
@@ -162,7 +170,6 @@ const Signup = () => {
           agreeTerms: false,
         });
 
-        // Redirect to login after 1 second with user data
         setTimeout(() => {
           navigate("/login", {
             state: {
@@ -171,49 +178,89 @@ const Signup = () => {
               userType: response.data.userType,
             },
           });
-        }, 1000);
+        }, 2000);
       } catch (error) {
         console.error("Signup error:", error);
 
         if (error.response) {
-          // Server responded with error
           setErrors({
             general:
               error.response.data.message ||
               "Registration failed. Please try again.",
           });
-          alert(
-            `❌ Error: ${error.response.data.message || "Registration failed"}`
+          toast.error(
+            error.response.data.message ||
+              "Registration failed. Please try again.",
+            {
+              icon: "❌",
+              duration: 4000,
+            }
           );
         } else if (error.request) {
-          // Request made but no response
           setErrors({
             general:
-              "Unable to connect to server. Please check if JSON Server is running on http://localhost:3001",
+              "Unable to connect to server. Please check if JSON Server is running on http://localhost:3000",
           });
-          alert(
-            "❌ Error: Unable to connect to server. Please check if JSON Server is running on http://localhost:3001"
+          toast.error(
+            "Unable to connect to server. Please check if JSON Server is running.",
+            {
+              icon: "⚠️",
+              duration: 5000,
+            }
           );
         } else {
-          // Other errors
           setErrors({
             general: "Something went wrong. Please try again.",
           });
-          alert("❌ Error: Something went wrong. Please try again.");
+          toast.error("Something went wrong. Please try again.", {
+            icon: "❌",
+          });
         }
       } finally {
         setLoading(false);
       }
     } else {
       setErrors(validationErrors);
-      // Show first error
       const firstError = Object.values(validationErrors)[0];
-      alert(`⚠️ ${firstError}`);
+      toast.error(firstError, {
+        icon: "⚠️",
+        duration: 3000,
+      });
     }
   };
 
   return (
     <div className="signup-page">
+      {/* Toast Container */}
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        gutter={8}
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: "#fff",
+            color: "#363636",
+            fontSize: "16px",
+            fontWeight: "500",
+          },
+          success: {
+            duration: 3000,
+            style: {
+              background: "#d4edda",
+              border: "1px solid #c3e6cb",
+            },
+          },
+          error: {
+            duration: 4000,
+            style: {
+              background: "#f8d7da",
+              border: "1px solid #f5c6cb",
+            },
+          },
+        }}
+      />
+
       {/* Navigation Bar */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div className="container-fluid px-5">
@@ -334,7 +381,6 @@ const Signup = () => {
                 </button>
               </div>
 
-              {/* Show selected user type */}
               <div className="text-center mb-3">
                 <small className="text-muted">
                   Signing up as:{" "}
@@ -350,7 +396,6 @@ const Signup = () => {
                   CREATE ACCOUNT
                 </h5>
 
-                {/* General Error Message */}
                 {errors.general && (
                   <div className="alert alert-danger py-2" role="alert">
                     {errors.general}

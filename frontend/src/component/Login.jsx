@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Login.css";
 
@@ -9,7 +10,6 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Check if there's a success message from signup
   const signupMessage = location.state?.message;
   const signupEmail = location.state?.email;
 
@@ -23,10 +23,12 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  // Show success message if coming from signup
   React.useEffect(() => {
     if (signupMessage) {
-      alert(signupMessage);
+      toast.success(signupMessage, {
+        icon: "✅",
+        duration: 4000,
+      });
     }
   }, [signupMessage]);
 
@@ -36,7 +38,6 @@ const Login = () => {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
-    // Clear errors when user types
     if (errors[name]) {
       setErrors({ ...errors, [name]: "" });
     }
@@ -75,71 +76,74 @@ const Login = () => {
       setErrors({});
 
       try {
-        // Fetch users from JSON server - FIXED PORT TO 3000
         const response = await axios.get("http://localhost:3000/users");
         const users = response.data;
 
-        console.log("All users:", users);
-        console.log(
-          "Looking for:",
-          formData.email,
-          formData.password,
-          activeTab
-        );
-
-        // Find user with matching email and password
         const user = users.find(
           (u) => u.email === formData.email && u.password === formData.password
         );
 
-        console.log("Found user:", user);
-
         if (user) {
-          // Check if user type matches the selected tab
           if (user.userType !== activeTab) {
             setErrors({
               general: `This account is registered as a ${user.userType.toUpperCase()}. Please select the correct user type tab.`,
             });
+            toast.error(
+              `This account is registered as a ${user.userType.toUpperCase()}. Please switch tabs.`,
+              {
+                icon: "⚠️",
+                duration: 4000,
+              }
+            );
             setLoading(false);
             return;
           }
 
-          // Login successful - STORE USER DATA IN LOCALSTORAGE
           console.log("Login successful:", user);
 
-          // Store user data in localStorage
-          const userData = {
-            id: user.id,
-            fullName: user.fullName,
-            email: user.email,
-            userType: user.userType,
-            phone: user.phone,
-            address: user.address,
-          };
+          localStorage.setItem(
+            "currentUser",
+            JSON.stringify({
+              id: user.id,
+              fullName: user.fullName,
+              email: user.email,
+              userType: user.userType,
+              phone: user.phone,
+              address: user.address,
+            })
+          );
 
-          localStorage.setItem("currentUser", JSON.stringify(userData));
-          console.log("User data stored in localStorage:", userData);
+          toast.success(`Welcome back, ${user.fullName}!`, {
+            icon: "👋",
+            duration: 3000,
+            style: {
+              border: "2px solid #4caf50",
+              padding: "16px",
+              fontWeight: "bold",
+            },
+          });
 
-          // Show success message
-          alert(`✅ Welcome back, ${user.fullName}!`);
-
-          // Route based on userType from data.json
-          if (user.userType === "seller") {
-            console.log("Navigating to seller dashboard");
-            navigate("/seller-dashboard", { replace: true });
-          } else if (user.userType === "buyer") {
-            console.log("Navigating to buyer dashboard");
-            navigate("/buyer-dashboard", { replace: true });
-          } else {
-            // Fallback in case of unexpected userType
-            setErrors({
-              general: "Invalid user type. Please contact support.",
-            });
-          }
+          setTimeout(() => {
+            if (user.userType === "seller") {
+              navigate("/seller-dashboard");
+            } else if (user.userType === "buyer") {
+              navigate("/buyer-dashboard");
+            } else {
+              setErrors({
+                general: "Invalid user type. Please contact support.",
+              });
+              toast.error("Invalid user type. Please contact support.", {
+                icon: "❌",
+              });
+            }
+          }, 1500);
         } else {
-          // Login failed - user not found
           setErrors({
             general: "Invalid email or password. Please try again.",
+          });
+          toast.error("Invalid email or password. Please try again.", {
+            icon: "❌",
+            duration: 4000,
           });
         }
       } catch (error) {
@@ -149,14 +153,27 @@ const Login = () => {
           setErrors({
             general: "Server error. Please try again later.",
           });
+          toast.error("Server error. Please try again later.", {
+            icon: "⚠️",
+          });
         } else if (error.request) {
           setErrors({
             general:
               "Unable to connect to server. Please check if JSON Server is running on http://localhost:3000",
           });
+          toast.error(
+            "Unable to connect to server. Please check if JSON Server is running.",
+            {
+              icon: "⚠️",
+              duration: 5000,
+            }
+          );
         } else {
           setErrors({
             general: "An error occurred. Please try again.",
+          });
+          toast.error("An error occurred. Please try again.", {
+            icon: "❌",
           });
         }
       } finally {
@@ -164,11 +181,45 @@ const Login = () => {
       }
     } else {
       setErrors(validationErrors);
+      const firstError = Object.values(validationErrors)[0];
+      toast.error(firstError, {
+        icon: "⚠️",
+      });
     }
   };
 
   return (
     <div className="login-page">
+      {/* Toast Container */}
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        gutter={8}
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: "#fff",
+            color: "#363636",
+            fontSize: "16px",
+            fontWeight: "500",
+          },
+          success: {
+            duration: 3000,
+            style: {
+              background: "#d4edda",
+              border: "1px solid #c3e6cb",
+            },
+          },
+          error: {
+            duration: 4000,
+            style: {
+              background: "#f8d7da",
+              border: "1px solid #f5c6cb",
+            },
+          },
+        }}
+      />
+
       {/* Navigation Bar */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div className="container-fluid px-5">
@@ -277,7 +328,6 @@ const Login = () => {
                 </button>
               </div>
 
-              {/* Show selected user type */}
               <div className="text-center mb-3">
                 <small className="text-muted">
                   Logging in as:{" "}
@@ -293,7 +343,6 @@ const Login = () => {
                   USER LOGIN
                 </h5>
 
-                {/* General Error Message */}
                 {errors.general && (
                   <div className="alert alert-danger py-2" role="alert">
                     {errors.general}
