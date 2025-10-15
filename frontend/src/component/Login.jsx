@@ -473,17 +473,6 @@ const Login = () => {
                   </button>
                 </div>
               </form>
-
-              {/* Test Credentials Info */}
-              <div className="mt-4 p-3 bg-light rounded">
-                <small className="text-muted">
-                  <strong>📝 Test Credentials:</strong>
-                  <br />
-                  <strong>Buyer:</strong> customer@test.com / customer123
-                  <br />
-                  <strong>Seller:</strong> farmer@test.com / farmer123
-                </small>
-              </div>
             </div>
           </Col>
         </Row>
