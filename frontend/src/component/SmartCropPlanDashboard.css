@@ -1,0 +1,294 @@
+.smart-crop-plan-dashboard {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.smart-crop-plan-dashboard .container {
+  max-width: 1200px;
+}
+
+.smart-crop-plan-dashboard h2 {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Section */
+.smart-crop-plan-dashboard .card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.smart-crop-plan-dashboard .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.smart-crop-plan-dashboard .card-header {
+  border-radius: 10px 10px 0 0;
+  font-weight: 600;
+  padding: 15px 20px;
+}
+
+.smart-crop-plan-dashboard .form-control {
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  padding: 10px 15px;
+  transition: border-color 0.3s ease;
+}
+
+.smart-crop-plan-dashboard .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.smart-crop-plan-dashboard .btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.smart-crop-plan-dashboard .btn-primary:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.smart-crop-plan-dashboard .btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Plan Header */
+.plan-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.plan-header .card-body {
+  padding: 25px;
+}
+
+.plan-header h3 {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.plan-header .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.plan-header .badge-lg {
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+/* Suitability Cards */
+.suitability-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.suitability-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.suitability-score {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.suitability-card .progress {
+  height: 8px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+}
+
+.suitability-card .progress-bar {
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+/* Plan Sections */
+.plan-container {
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plan-container .card-header {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 20px;
+}
+
+.plan-container .card-body {
+  padding: 20px;
+}
+
+.plan-container .card-body h6 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.plan-container .card-body strong {
+  color: #34495e;
+}
+
+.plan-container .card-body p {
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Alert Styling */
+.smart-crop-plan-dashboard .alert {
+  border-radius: 8px;
+  border: none;
+  padding: 15px 20px;
+}
+
+.smart-crop-plan-dashboard .alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.smart-crop-plan-dashboard .alert-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.smart-crop-plan-dashboard .alert ul {
+  padding-left: 20px;
+}
+
+.smart-crop-plan-dashboard .alert li {
+  margin-bottom: 8px;
+}
+
+/* Badge Styling */
+.smart-crop-plan-dashboard .badge {
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.smart-crop-plan-dashboard .badge-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.smart-crop-plan-dashboard .badge-warning {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.smart-crop-plan-dashboard .badge-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.smart-crop-plan-dashboard .badge-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+/* Table Styling */
+.smart-crop-plan-dashboard .table {
+  margin-bottom: 0;
+}
+
+.smart-crop-plan-dashboard .table thead th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 12px;
+}
+
+.smart-crop-plan-dashboard .table tbody td {
+  padding: 12px;
+  vertical-align: middle;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.smart-crop-plan-dashboard .table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .smart-crop-plan-dashboard h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .plan-header .text-right {
+    text-align: left !important;
+    margin-top: 15px;
+  }
+
+  .suitability-score {
+    font-size: 24px;
+  }
+
+  .plan-container .card-body {
+    padding: 15px;
+  }
+
+  .plan-container .row {
+    margin-bottom: 15px;
+  }
+
+  .smart-crop-plan-dashboard .table {
+    font-size: 12px;
+  }
+
+  .smart-crop-plan-dashboard .table thead th,
+  .smart-crop-plan-dashboard .table tbody td {
+    padding: 8px;
+  }
+}
+
+/* Loading State */
+.smart-crop-plan-dashboard .btn-primary:disabled {
+  background: linear-gradient(135deg, #999 0%, #666 100%);
+}
+
+/* Error Message */
+.smart-crop-plan-dashboard .alert-warning {
+  margin-top: 15px;
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}

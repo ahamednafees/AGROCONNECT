@@ -190,7 +190,7 @@ const SellerDashboard = () => {
             className="collapse navbar-collapse justify-content-end"
             id="navbarNav"
           >
-            <ul className="navbar-nav align-items-center gap-3">
+            <ul className="navbar-nav align-items-center gap-2">
               <li className="nav-item">
                 <span className="text-dark">
                   Welcome, <strong>{currentUser?.fullName}</strong>
@@ -198,23 +198,47 @@ const SellerDashboard = () => {
               </li>
               <li className="nav-item">
                 <button
-                  className="btn btn-primary text-white"
+                  className="btn btn-primary btn-sm text-white"
                   onClick={() => navigate("/climate")}
                 >
-                  🌦️ Climate Management
+                  🌦️ Climate
                 </button>
               </li>
               <li className="nav-item">
                 <button
-                  className="btn btn-success"
+                  className="btn btn-success btn-sm"
+                  onClick={() => navigate("/soil-analysis")}
+                >
+                  🌱 Soil
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className="btn btn-warning btn-sm"
+                  onClick={() => navigate("/market-price-forecast")}
+                >
+                  💹 Market Price
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className="btn btn-secondary btn-sm"
+                  onClick={() => navigate("/smart-crop-plan")}
+                >
+                  🌾 Smart Plan
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className="btn btn-info btn-sm text-white"
                   onClick={() => navigate("/chat")}
                 >
-                  💬 Community Chat
+                  💬 Chat
                 </button>
               </li>
               <li className="nav-item">
                 <button
-                  className="btn btn-info text-white"
+                  className="btn btn-info btn-sm text-white"
                   onClick={() => navigate("/calendar")}
                 >
                   📅 Calendar
@@ -222,14 +246,14 @@ const SellerDashboard = () => {
               </li>
               <li className="nav-item">
                 <button
-                  className="btn btn-dark fw-bold"
+                  className="btn btn-dark btn-sm fw-bold"
                   onClick={() => navigate("/equipment-renting")}
                 >
-                  🚜 Equipment Renting
+                  🚜 Equipment
                 </button>
               </li>
               <li className="nav-item">
-                <button className="btn btn-outline-dark" onClick={handleLogout}>
+                <button className="btn btn-outline-dark btn-sm" onClick={handleLogout}>
                   Logout
                 </button>
               </li>

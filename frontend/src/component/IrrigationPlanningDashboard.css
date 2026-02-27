@@ -1,0 +1,107 @@
+.irrigation-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 0;
+}
+
+.irrigation-dashboard h2 {
+  color: white;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.stat-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 8px;
+}
+
+.stat-card .card-body {
+  padding: 20px;
+}
+
+.stat-card h6 {
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.card h5 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  color: #667eea;
+  font-weight: 600;
+  border-bottom: 2px solid #667eea;
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 12px;
+}
+
+.badge {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.alert {
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.alert-info {
+  background-color: #e7f3ff;
+  border-left-color: #667eea;
+  color: #004085;
+}
+
+.form-control,
+.form-select {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.btn-primary {
+  background-color: #667eea;
+  border-color: #667eea;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #5568d3;
+  border-color: #5568d3;
+}
+
+.btn-primary:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+}
+
+ul li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #333;
+}

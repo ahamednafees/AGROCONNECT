@@ -69,538 +69,217 @@
       "password": "1234567",
       "userType": "buyer",
       "createdAt": "2026-02-27T04:13:14.405Z"
-    },
-    {
-      "id": "dummy1",
-      "fullName": "John Doe",
-      "email": "johndoe@example.com",
-      "phone": "1234567890",
-      "address": "123 Main St, Springfield",
-      "password": "password123",
-      "userType": "buyer",
-      "createdAt": "2026-02-27T10:00:00.000Z"
     }
   ],
-  "products": [
-    {
-      "id": "1",
-      "name": "Organic Tomatoes",
-      "price": "₹40/kg",
-      "image": "🍅",
-      "farmer": "Rajesh Kumar",
-      "rating": 4.5,
-      "location": "Punjab"
-    },
-    {
-      "id": "2",
-      "name": "Fresh Potatoes",
-      "price": "₹25/kg",
-      "image": "🥔",
-      "farmer": "Amit Singh",
-      "rating": 4.8,
-      "location": "Haryana"
-    },
-    {
-      "id": "3",
-      "name": "Green Beans",
-      "price": "₹60/kg",
-      "image": "🫘",
-      "farmer": "Priya Sharma",
-      "rating": 4.6,
-      "location": "Maharashtra"
-    },
-    {
-      "id": "4",
-      "name": "Fresh Carrots",
-      "price": "₹35/kg",
-      "image": "🥕",
-      "farmer": "Suresh Patel",
-      "rating": 4.7,
-      "location": "Gujarat"
-    },
-    {
-      "id": "5",
-      "name": "Organic Spinach",
-      "price": "₹30/kg",
-      "image": "🥬",
-      "farmer": "Meena Devi",
-      "rating": 4.9,
-      "location": "Uttarakhand"
-    },
-    {
-      "id": "6",
-      "name": "Fresh Cauliflower",
-      "price": "₹45/kg",
-      "image": "🥦",
-      "farmer": "Ramesh Yadav",
-      "rating": 4.4,
-      "location": "Uttar Pradesh"
-    },
-    {
-      "id": "c864",
-      "name": "banana",
-      "price": "₹50/kg",
-      "image": "🍌",
-      "farmer": "nafee",
-      "rating": 5,
-      "location": "ghfjjh"
-    },
-    {
-      "id": "d0fd",
-      "name": "rice",
-      "price": "₹75/kg",
-      "image": "🌾",
-      "farmer": "nafee",
-      "rating": 4.5,
-      "location": "ghfjjh"
-    },
-    {
-      "id": "8708",
-      "name": "grapes",
-      "price": "₹100/kg",
-      "image": "🍇",
-      "farmer": "dhara",
-      "rating": 4.5,
-      "location": "Tiruppur"
-    },
-    {
-      "id": "f12f",
-      "name": "Apple",
-      "price": "₹50/kg",
-      "image": "🍎",
-      "farmer": "Raja",
-      "rating": 4.5,
-      "location": "Address"
-    },
-    {
-      "id": "dummyProduct1",
-      "name": "Test Product",
-      "price": "₹99/kg",
-      "image": "🛒",
-      "farmer": "Test Farmer",
-      "rating": 4.0,
-      "location": "Test Location"
-    }
-  ],
-  "testimonials": [
-    {
-      "id": "1",
-      "name": "Anita Verma",
-      "role": "Customer",
-      "text": "AgroConnect has transformed how I buy vegetables. Fresh produce directly from farmers at great prices!",
-      "rating": 5,
-      "avatar": "👩"
-    },
-    {
-      "id": "2",
-      "name": "Vikram Singh",
-      "role": "Farmer",
-      "text": "Finally, a platform that gives us fair prices and connects us directly with customers. Game changer!",
-      "rating": 5,
-      "avatar": "👨🌾"
-    },
-    {
-      "id": "3",
-      "name": "Priya Menon",
-      "role": "Customer",
-      "text": "Quality products, quick delivery, and supporting local farmers. What more could I ask for?",
-      "rating": 5,
-      "avatar": "👩💼"
-    },
-    {
-      "id": "dummyTestimonial1",
-      "name": "Jane Doe",
-      "role": "Customer",
-      "text": "This is a dummy testimonial for testing purposes.",
-      "rating": 5,
-      "avatar": "👩"
-    }
-  ],
-  "equipment": [
-    {
-      "id": "c669",
-      "name": "John Deere Tractor 5055E",
-      "type": "Tractor",
-      "price": "₹2000/day",
-      "image": "🚜",
-      "owner": "Raja",
-      "rating": 4.5,
-      "location": "Address",
-      "specifications": "55HP, 4WD, Perfect for heavy farming",
-      "condition": "Excellent",
-      "available": true
-    },
-    {
-      "id": "eq1",
-      "name": "Mahindra Harvester Pro",
-      "type": "Harvester",
-      "price": "₹3500/day",
-      "image": "🌾",
-      "owner": "dhara",
-      "rating": 4.7,
-      "location": "Tiruppur",
-      "specifications": "Combine harvester, 20 acres/day capacity, Well-maintained",
-      "condition": "Good",
-      "available": true
-    },
-    {
-      "id": "eq2",
-      "name": "Heavy Duty Transport Truck",
-      "type": "Truck",
-      "price": "₹1500/day",
-      "image": "🚚",
-      "owner": "nafee",
-      "rating": 4.6,
-      "location": "ghfjjh",
-      "specifications": "10-ton capacity, Perfect for transportation, GPS tracking",
-      "condition": "Excellent",
-      "available": true
-    },
-    {
-      "id": "dummyEquipment1",
-      "name": "Test Equipment",
-      "type": "Tractor",
-      "price": "₹500/day",
-      "image": "🚜",
-      "owner": "Test Owner",
-      "rating": 4.5,
-      "location": "Test Location",
-      "specifications": "Test specifications",
-      "condition": "Good",
-      "available": true
-    }
-  ],
+  "products": [],
+  "testimonials": [],
+  "equipment": [],
   "climateRecords": [
     {
-      "id": "hr01",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T08:00:00.000Z",
-      "hourKey": "2026-02-27T08",
-      "date": "2026-02-27",
-      "hour": 8,
-      "temperature": 28.5,
-      "rainfall": 45.2,
-      "humidity": 65.3,
-      "soilMoisture": 55.1,
-      "isGenerated": true,
-      "createdAt": "2026-02-27T08:00:00.000Z"
-    },
-    {
-      "id": "hr02",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T09:00:00.000Z",
-      "hourKey": "2026-02-27T09",
-      "date": "2026-02-27",
-      "hour": 9,
-      "temperature": 29.2,
-      "rainfall": 44.8,
-      "humidity": 63.1,
-      "soilMoisture": 54.9,
-      "isGenerated": true,
-      "createdAt": "2026-02-27T09:00:00.000Z"
-    },
-    {
-      "id": "hr03",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T10:00:00.000Z",
-      "hourKey": "2026-02-27T10",
-      "date": "2026-02-27",
-      "hour": 10,
-      "temperature": 30.1,
-      "rainfall": 43.5,
-      "humidity": 61.2,
-      "soilMoisture": 54.5,
-      "isGenerated": true,
-      "createdAt": "2026-02-27T10:00:00.000Z"
-    },
-    {
-      "id": "hr04",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T11:00:00.000Z",
-      "hourKey": "2026-02-27T11",
-      "date": "2026-02-27",
-      "hour": 11,
-      "temperature": 31.5,
-      "rainfall": 42.1,
-      "humidity": 58.9,
-      "soilMoisture": 54.0,
-      "isGenerated": true,
-      "createdAt": "2026-02-27T11:00:00.000Z"
-    },
-    {
-      "id": "hr05",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T12:00:00.000Z",
-      "hourKey": "2026-02-27T12",
-      "date": "2026-02-27",
-      "hour": 12,
-      "temperature": 32.8,
-      "rainfall": 40.5,
-      "humidity": 56.2,
-      "soilMoisture": 53.2,
-      "isGenerated": true,
-      "createdAt": "2026-02-27T12:00:00.000Z"
-    },
-    {
-      "id": "hr06",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T13:00:00.000Z",
-      "hourKey": "2026-02-27T13",
-      "date": "2026-02-27",
-      "hour": 13,
-      "temperature": 34.2,
-      "rainfall": 38.9,
-      "humidity": 53.5,
-      "soilMoisture": 52.1,
-      "isGenerated": true,
-      "createdAt": "2026-02-27T13:00:00.000Z"
-    },
-    {
-      "id": "hr07",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T14:00:00.000Z",
-      "hourKey": "2026-02-27T14",
-      "date": "2026-02-27",
-      "hour": 14,
-      "temperature": 35.1,
-      "rainfall": 37.2,
-      "humidity": 50.8,
-      "soilMoisture": 50.9,
-      "isGenerated": true,
-      "createdAt": "2026-02-27T14:00:00.000Z"
-    },
-    {
-      "id": "hr08",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T15:00:00.000Z",
-      "hourKey": "2026-02-27T15",
-      "date": "2026-02-27",
-      "hour": 15,
-      "temperature": 35.9,
-      "rainfall": 35.5,
-      "humidity": 48.1,
-      "soilMoisture": 49.5,
-      "isGenerated": true,
-      "createdAt": "2026-02-27T15:00:00.000Z"
-    }
-  ],
-  "climateAnalysis": [
-    {
-      "id": "ca01",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T09:00:00.000Z",
-      "date": "2026-02-27",
-      "hour": 9,
-      "riskLevel": "LOW",
-      "tempChange": 0.7,
-      "rainfallChange": -0.9,
-      "humidityChange": -2.2,
-      "healthScore": 92,
-      "message": "Temp +0.7°C, Rainfall -0.9%, Humidity -2.2%. Climate conditions stable.",
-      "aiInsight": "Stable morning conditions. Optimal for crop growth. Continue regular monitoring.",
-      "createdAt": "2026-02-27T09:00:00.000Z"
-    },
-    {
-      "id": "ca02",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T10:00:00.000Z",
-      "date": "2026-02-27",
-      "hour": 10,
-      "riskLevel": "LOW",
-      "tempChange": 0.9,
-      "rainfallChange": -2.9,
-      "humidityChange": -1.9,
-      "healthScore": 90,
-      "message": "Temp +0.9°C, Rainfall -2.9%, Humidity -1.9%. Climate conditions stable.",
-      "aiInsight": "Temperature rising gradually. Maintain irrigation schedule.",
-      "createdAt": "2026-02-27T10:00:00.000Z"
-    },
-    {
-      "id": "ca03",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T11:00:00.000Z",
-      "date": "2026-02-27",
-      "hour": 11,
-      "riskLevel": "MODERATE",
-      "tempChange": 1.4,
-      "rainfallChange": -3.2,
-      "humidityChange": -2.3,
-      "healthScore": 75,
-      "message": "Temp +1.4°C, Rainfall -3.2%, Humidity -2.3%. Monitor crop health.",
-      "aiInsight": "Midday heat increasing. Ensure adequate soil moisture. Consider afternoon irrigation.",
-      "createdAt": "2026-02-27T11:00:00.000Z"
-    },
-    {
-      "id": "ca04",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T12:00:00.000Z",
-      "date": "2026-02-27",
-      "hour": 12,
-      "riskLevel": "MODERATE",
-      "tempChange": 1.3,
-      "rainfallChange": -3.8,
-      "humidityChange": -2.7,
-      "healthScore": 68,
-      "message": "Temp +1.3°C, Rainfall -3.8%, Humidity -2.7%. Monitor crop health.",
-      "aiInsight": "Peak heat period. Humidity dropping significantly. Increase irrigation frequency.",
-      "createdAt": "2026-02-27T12:00:00.000Z"
-    },
-    {
-      "id": "ca05",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T13:00:00.000Z",
-      "date": "2026-02-27",
-      "hour": 13,
-      "riskLevel": "HIGH",
-      "tempChange": 1.4,
-      "rainfallChange": -4.1,
-      "humidityChange": -2.7,
-      "healthScore": 55,
-      "message": "Temp +1.4°C, Rainfall -4.1%, Humidity -2.7%. Immediate action needed.",
-      "aiInsight": "Critical conditions detected. Severe heat stress risk. Urgent irrigation required. Consider shade measures.",
-      "createdAt": "2026-02-27T13:00:00.000Z"
-    },
-    {
-      "id": "ca06",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T14:00:00.000Z",
-      "date": "2026-02-27",
-      "hour": 14,
-      "riskLevel": "HIGH",
-      "tempChange": 0.9,
-      "rainfallChange": -3.5,
-      "humidityChange": -2.7,
-      "healthScore": 48,
-      "message": "Temp +0.9°C, Rainfall -3.5%, Humidity -2.7%. Immediate action needed.",
-      "aiInsight": "Extreme heat and low humidity. Drought risk high. Emergency irrigation advised.",
-      "createdAt": "2026-02-27T14:00:00.000Z"
-    },
-    {
-      "id": "ca07",
-      "location": "Tiruppur",
-      "timestamp": "2026-02-27T15:00:00.000Z",
-      "date": "2026-02-27",
-      "hour": 15,
-      "riskLevel": "HIGH",
-      "tempChange": 0.8,
-      "rainfallChange": -4.8,
-      "humidityChange": -2.7,
-      "healthScore": 42,
-      "message": "Temp +0.8°C, Rainfall -4.8%, Humidity -2.7%. Immediate action needed.",
-      "aiInsight": "Critical drought conditions. Soil moisture depleting rapidly. Implement emergency water management.",
-      "createdAt": "2026-02-27T15:00:00.000Z"
-    }
-  ],
-  "climateData": [
-    {
-      "id": "cd1",
-      "location": "Tiruppur",
+      "id": "tn7h",
+      "location": "123,Address",
+      "date": "2025-12-31",
+      "temperature": 31.8,
+      "rainfall": 43.2,
+      "humidity": 73.4,
+      "soilMoisture": 65.5,
       "month": 1,
-      "year": 2025,
-      "temperature": 28,
-      "rainfall": 45,
-      "humidity": 65,
-      "soilMoisture": 55,
-      "recordedBy": "503b",
-      "createdAt": "2025-01-15T10:00:00.000Z"
-    },
-    {
-      "id": "cd2",
-      "location": "Tiruppur",
-      "month": 2,
-      "year": 2025,
-      "temperature": 32,
-      "rainfall": 20,
-      "humidity": 50,
-      "soilMoisture": 40,
-      "recordedBy": "503b",
-      "createdAt": "2025-02-15T10:00:00.000Z"
-    }
-  ],
-  "climateAlerts": [
-    {
-      "id": "ca1",
-      "location": "Tiruppur",
-      "riskLevel": "MODERATE",
-      "message": "Temperature increased by 4°C and rainfall decreased by 55%. Monitor crop health closely.",
-      "affectedUsers": ["503b"],
-      "metrics": {
-        "tempChange": 4,
-        "rainfallChange": -25,
-        "humidityChange": -15
-      },
-      "month": 2,
-      "year": 2025,
-      "isActive": true,
-      "createdAt": "2025-02-16T08:00:00.000Z"
-    },
-    {
-      "id": "ca2",
-      "location": "Tiruppur",
-      "riskLevel": "HIGH",
-      "message": "Critical drought conditions. Soil moisture depleting rapidly. Implement emergency water management.",
-      "affectedUsers": ["503b"],
-      "metrics": {
-        "tempChange": 7.4,
-        "rainfallChange": -21.3,
-        "humidityChange": -16.5
-      },
-      "month": 2,
       "year": 2026,
-      "isActive": true,
-      "createdAt": "2026-02-27T15:00:00.000Z"
+      "isGenerated": false,
+      "createdAt": "2026-02-27T06:30:45.946Z"
+    },
+    {
+      "id": "lna2",
+      "location": "12,ghfjjh",
+      "date": "2025-12-31",
+      "temperature": 31.3,
+      "rainfall": 46.4,
+      "humidity": 78.9,
+      "soilMoisture": 65.8,
+      "month": 1,
+      "year": 2026,
+      "isGenerated": false,
+      "createdAt": "2026-02-27T06:30:45.982Z"
+    },
+    {
+      "id": "23f3",
+      "location": "11/147,annainagar ganapathipalayam,Tiruppur",
+      "date": "2025-12-31",
+      "temperature": 34,
+      "rainfall": 55,
+      "humidity": 60.5,
+      "soilMoisture": 67.7,
+      "month": 1,
+      "year": 2026,
+      "isGenerated": false,
+      "createdAt": "2026-02-27T06:30:46.009Z"
     }
   ],
-  "notifications": [
+  "climateAnalysis": [],
+  "climateData": [],
+  "climateAlerts": [],
+  "notifications": [],
+  "soilAnalysis": [],
+  "cropDiseases": [],
+  "cropRecommendations": [],
+  "irrigationPlans": [
     {
-      "id": "n1",
+      "id": "ip01",
       "userId": "503b",
-      "type": "CLIMATE_ALERT",
-      "title": "Climate Risk Alert - MODERATE",
-      "message": "Temperature increased by 4°C and rainfall decreased by 55%. Monitor crop health closely.",
-      "riskLevel": "MODERATE",
-      "isRead": false,
-      "createdAt": "2025-02-16T08:00:00.000Z"
+      "cropType": "Rice",
+      "location": "11/147,annainagar ganapathipalayam,Tiruppur",
+      "recommendedFrequency": "Daily",
+      "waterAmount": 108,
+      "irrigationMethod": "Drip",
+      "bestTime": "Morning",
+      "generatedDate": "2026-02-27",
+      "next7DaySchedule": [
+        {
+          "date": "2026-02-27",
+          "frequency": "Daily",
+          "waterAmount": 108,
+          "method": "Drip",
+          "time": "Morning"
+        },
+        {
+          "date": "2026-02-28",
+          "frequency": "Daily",
+          "waterAmount": 108,
+          "method": "Drip",
+          "time": "Morning"
+        },
+        {
+          "date": "2026-03-01",
+          "frequency": "Daily",
+          "waterAmount": 108,
+          "method": "Drip",
+          "time": "Morning"
+        },
+        {
+          "date": "2026-03-02",
+          "frequency": "Daily",
+          "waterAmount": 108,
+          "method": "Drip",
+          "time": "Morning"
+        },
+        {
+          "date": "2026-03-03",
+          "frequency": "Daily",
+          "waterAmount": 108,
+          "method": "Drip",
+          "time": "Morning"
+        },
+        {
+          "date": "2026-03-04",
+          "frequency": "Daily",
+          "waterAmount": 108,
+          "method": "Drip",
+          "time": "Morning"
+        },
+        {
+          "date": "2026-03-05",
+          "frequency": "Daily",
+          "waterAmount": 108,
+          "method": "Drip",
+          "time": "Morning"
+        }
+      ],
+      "createdAt": "2026-02-27T10:00:00.000Z"
     },
     {
-      "id": "n2",
-      "userId": "503b",
-      "type": "CLIMATE_ALERT",
-      "title": "Climate Risk Alert - MODERATE",
-      "message": "Midday heat increasing. Ensure adequate soil moisture. Consider afternoon irrigation.",
-      "riskLevel": "MODERATE",
-      "isRead": true,
-      "createdAt": "2026-02-27T11:00:00.000Z"
-    },
-    {
-      "id": "n3",
-      "userId": "503b",
-      "type": "CLIMATE_ALERT",
-      "title": "Climate Risk Alert - HIGH",
-      "message": "Critical conditions detected. Severe heat stress risk. Urgent irrigation required. Consider shade measures.",
-      "riskLevel": "HIGH",
-      "isRead": false,
-      "createdAt": "2026-02-27T13:00:00.000Z"
-    },
-    {
-      "id": "n4",
-      "userId": "503b",
-      "type": "CLIMATE_ALERT",
-      "title": "Climate Risk Alert - HIGH",
-      "message": "Extreme heat and low humidity. Drought risk high. Emergency irrigation advised.",
-      "riskLevel": "HIGH",
-      "isRead": false,
-      "createdAt": "2026-02-27T14:00:00.000Z"
-    },
-    {
-      "id": "n5",
-      "userId": "503b",
-      "type": "CLIMATE_ALERT",
-      "title": "Climate Risk Alert - HIGH",
-      "message": "Critical drought conditions. Soil moisture depleting rapidly. Implement emergency water management.",
-      "riskLevel": "HIGH",
-      "isRead": false,
-      "createdAt": "2026-02-27T15:00:00.000Z"
+      "id": "ip02",
+      "userId": "44f0",
+      "cropType": "Wheat",
+      "location": "123,Address",
+      "recommendedFrequency": "Every2Days",
+      "waterAmount": 48,
+      "irrigationMethod": "Sprinkler",
+      "bestTime": "Evening",
+      "generatedDate": "2026-02-27",
+      "next7DaySchedule": [
+        {
+          "date": "2026-02-27",
+          "frequency": "Every2Days",
+          "waterAmount": 48,
+          "method": "Sprinkler",
+          "time": "Evening"
+        },
+        {
+          "date": "2026-03-01",
+          "frequency": "Every2Days",
+          "waterAmount": 48,
+          "method": "Sprinkler",
+          "time": "Evening"
+        },
+        {
+          "date": "2026-03-03",
+          "frequency": "Every2Days",
+          "waterAmount": 48,
+          "method": "Sprinkler",
+          "time": "Evening"
+        },
+        {
+          "date": "2026-03-05",
+          "frequency": "Every2Days",
+          "waterAmount": 48,
+          "method": "Sprinkler",
+          "time": "Evening"
+        }
+      ],
+      "createdAt": "2026-02-27T10:30:00.000Z"
     }
-  ]
+  ],
+  "crop_farming_plans": [
+    {
+      "id": "plan_001",
+      "user_id": "503b",
+      "crop_type": "Rice",
+      "location": "11/147,annainagar ganapathipalayam,Tiruppur",
+      "land_size": 2.5,
+      "suitability_score": 85,
+      "climate_suitability": {
+        "score": 88,
+        "status": "Suitable",
+        "details": []
+      },
+      "soil_suitability": {
+        "score": 82,
+        "status": "Suitable",
+        "details": []
+      },
+      "irrigation_plan": {
+        "frequency": "Daily",
+        "water_amount": 50,
+        "method": "Drip",
+        "best_time": "Morning"
+      },
+      "fertilizer_plan": {
+        "N": 120,
+        "P": 60,
+        "K": 40,
+        "notes": "Nutrients balanced. Apply maintenance dose.",
+        "applicationSchedule": "Apply in 3 splits: 50% at planting, 25% at tillering, 25% at flowering"
+      },
+      "disease_prevention_plan": [
+        "Maintain field hygiene",
+        "Monitor crop regularly"
+      ],
+      "yield_estimation": {
+        "expected": 65,
+        "unit": "quintals/acre",
+        "confidence": 0.85,
+        "potential": 65
+      },
+      "risk_level": "LOW",
+      "risk_warnings": [],
+      "smart_tips": [
+        "Maintain 5cm water level during growing season",
+        "Monitor for leaf blast and brown spot diseases",
+        "Apply potassium at panicle initiation stage"
+      ],
+      "created_at": "2026-02-27T10:30:00Z",
+      "updated_at": "2026-02-27T10:30:00Z"
+    }
+  ],
+  "market_price": []
 }

@@ -10,6 +10,9 @@ import EquipmentRenting from "./component/EquipmentRenting.jsx";
 import Chat from "./component/Chat.jsx";
 import Calendar from "./component/Calendar";
 import ClimateDashboard from "./component/ClimateDashboard";
+import SoilAnalysisDashboard from "./component/SoilAnalysisDashboard";
+import MarketPriceForecastDashboard from "./component/MarketPriceForecastDashboard";
+import SmartCropPlanDashboard from "./component/SmartCropPlanDashboard";
 import { startClimateScheduler } from "./services/climateScheduler";
 import "./App.css";
 
@@ -30,6 +33,9 @@ function App() {
           <Route path="/chat" element={<Chat />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/climate" element={<ClimateDashboard />} />
+          <Route path="/soil-analysis" element={<SoilAnalysisDashboard />} />
+          <Route path="/market-price-forecast" element={<MarketPriceForecastDashboard />} />
+          <Route path="/smart-crop-plan" element={<SmartCropPlanDashboard />} />
         </Routes>
       </div>
     </Router>

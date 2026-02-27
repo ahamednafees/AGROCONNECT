@@ -1,0 +1,71 @@
+.soil-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 0;
+}
+
+.soil-dashboard h2 {
+  color: white;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.health-score {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  margin-bottom: 20px;
+}
+
+.card h5 {
+  color: #667eea;
+  margin-bottom: 15px;
+}
+
+.card h6 {
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.alert {
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.alert-danger {
+  border-left-color: #dc3545;
+}
+
+.alert-info {
+  border-left-color: #17a2b8;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.btn-primary {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+.btn-primary:hover {
+  background-color: #5568d3;
+  border-color: #5568d3;
+}
