@@ -1,0 +1,92 @@
+.climate-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 0;
+}
+
+.climate-dashboard h2 {
+  color: white;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.alert-section {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.climate-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.trend-item {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.month-label {
+  font-weight: bold;
+  color: #667eea;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.metrics {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.metrics span {
+  background: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.trend-arrow {
+  text-align: center;
+  font-size: 24px;
+  color: #667eea;
+  margin: 10px 0;
+}
+
+.risk-indicator {
+  text-align: center;
+  padding: 20px;
+}
+
+.risk-indicator .badge {
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.badge-danger {
+  background-color: #dc3545;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.badge-success {
+  background-color: #28a745;
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.card h5 {
+  color: #667eea;
+  margin-bottom: 20px;
+}

@@ -20,8 +20,6 @@ const SellerDashboard = () => {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
-    console.log("Current user from localStorage:", user);
-
     if (!user || user.userType !== "seller") {
       toast.error("Please login as a seller to access this page", {
         icon: "🚫",
@@ -36,15 +34,11 @@ const SellerDashboard = () => {
 
   const fetchProducts = async () => {
     try {
-      console.log("Fetching products from API...");
       const response = await axios.get("http://localhost:3000/products");
-      console.log("All products:", response.data);
-
       const user = JSON.parse(localStorage.getItem("currentUser"));
       const sellerProducts = response.data.filter(
         (p) => p.farmer === user.fullName
       );
-      console.log("Seller products:", sellerProducts);
       setProducts(sellerProducts);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -73,21 +67,15 @@ const SellerDashboard = () => {
     e.preventDefault();
 
     if (!newProduct.name.trim()) {
-      toast.error("Please enter product name", {
-        icon: "❌",
-      });
+      toast.error("Please enter product name", { icon: "❌" });
       return;
     }
     if (!newProduct.price.trim()) {
-      toast.error("Please enter product price", {
-        icon: "❌",
-      });
+      toast.error("Please enter product price", { icon: "❌" });
       return;
     }
 
     try {
-      console.log("Adding new product...");
-
       const productData = {
         name: newProduct.name.trim(),
         price: newProduct.price.trim(),
@@ -97,57 +85,21 @@ const SellerDashboard = () => {
         location: currentUser.address.split(",").pop().trim() || "Unknown",
       };
 
-      console.log("Product data to send:", productData);
+      await axios.post("http://localhost:3000/products", productData, {
+        headers: { "Content-Type": "application/json" },
+      });
 
-      const response = await axios.post(
-        "http://localhost:3000/products",
-        productData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      console.log("Product added successfully:", response.data);
       toast.success(`Product "${newProduct.name}" added successfully!`, {
         icon: "✅",
         duration: 3000,
-        style: {
-          border: "2px solid #ffc107",
-          padding: "16px",
-          fontWeight: "bold",
-        },
       });
 
       setShowAddProduct(false);
-      setNewProduct({
-        name: "",
-        price: "",
-        image: "🌾",
-        rating: 4.5,
-      });
-
+      setNewProduct({ name: "", price: "", image: "🌾", rating: 4.5 });
       fetchProducts();
     } catch (error) {
       console.error("Error adding product:", error);
-      if (error.response) {
-        toast.error(error.response.data.message || "Failed to add product", {
-          icon: "❌",
-        });
-      } else if (error.request) {
-        toast.error(
-          "Unable to connect to server. Please check if JSON Server is running on http://localhost:3000",
-          {
-            icon: "⚠️",
-            duration: 5000,
-          }
-        );
-      } else {
-        toast.error("Failed to add product. Please try again.", {
-          icon: "❌",
-        });
-      }
+      toast.error("Failed to add product", { icon: "❌" });
     }
   };
 
@@ -179,43 +131,27 @@ const SellerDashboard = () => {
           </div>
         </div>
       ),
-      {
-        icon: "🗑️",
-        duration: 5000,
-        style: {
-          minWidth: "300px",
-        },
-      }
+      { icon: "🗑️", duration: 5000, style: { minWidth: "300px" } }
     );
   };
 
   const confirmDelete = async (productId, productName) => {
     try {
-      console.log("Deleting product with ID:", productId);
-
       await axios.delete(`http://localhost:3000/products/${productId}`);
-
-      console.log("Product deleted successfully");
       toast.success(`Product "${productName}" deleted successfully!`, {
         icon: "✅",
         duration: 3000,
       });
-
       fetchProducts();
     } catch (error) {
       console.error("Error deleting product:", error);
-      toast.error("Failed to delete product. Please try again.", {
-        icon: "❌",
-      });
+      toast.error("Failed to delete product", { icon: "❌" });
     }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setNewProduct({
-      ...newProduct,
-      [name]: value,
-    });
+    setNewProduct({ ...newProduct, [name]: value });
   };
 
   if (loading) {
@@ -235,37 +171,8 @@ const SellerDashboard = () => {
 
   return (
     <div className="dashboard-page">
-      {/* Toast Container */}
-      <Toaster
-        position="top-right"
-        reverseOrder={false}
-        gutter={8}
-        toastOptions={{
-          duration: 3000,
-          style: {
-            background: "#fff",
-            color: "#363636",
-            fontSize: "16px",
-            fontWeight: "500",
-          },
-          success: {
-            duration: 3000,
-            style: {
-              background: "#d4edda",
-              border: "1px solid #c3e6cb",
-            },
-          },
-          error: {
-            duration: 4000,
-            style: {
-              background: "#f8d7da",
-              border: "1px solid #f5c6cb",
-            },
-          },
-        }}
-      />
+      <Toaster position="top-right" reverseOrder={false} gutter={8} />
 
-      {/* Navigation Bar */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-warning shadow-sm">
         <div className="container-fluid px-4">
           <a className="navbar-brand fw-bold fs-4 text-dark" href="#">
@@ -288,6 +195,14 @@ const SellerDashboard = () => {
                 <span className="text-dark">
                   Welcome, <strong>{currentUser?.fullName}</strong>
                 </span>
+              </li>
+              <li className="nav-item">
+                <button
+                  className="btn btn-primary text-white"
+                  onClick={() => navigate("/climate")}
+                >
+                  🌦️ Climate Management
+                </button>
               </li>
               <li className="nav-item">
                 <button
@@ -323,14 +238,12 @@ const SellerDashboard = () => {
         </div>
       </nav>
 
-      {/* Dashboard Content */}
       <div className="container mt-4">
-        {/* Welcome Section */}
         <div className="row mb-4">
           <div className="col-12">
             <div className="card bg-gradient-warning">
               <div className="card-body p-4">
-                <h2 className="mb-2">👨‍🌾 Welcome, {currentUser?.fullName}!</h2>
+                <h2 className="mb-2">👨🌾 Welcome, {currentUser?.fullName}!</h2>
                 <p className="mb-0">
                   Manage your products and reach more customers
                 </p>
@@ -339,7 +252,6 @@ const SellerDashboard = () => {
           </div>
         </div>
 
-        {/* Stats Cards */}
         <div className="row mb-4">
           <div className="col-md-4 mb-3">
             <div className="card stat-card">
@@ -370,7 +282,6 @@ const SellerDashboard = () => {
           </div>
         </div>
 
-        {/* Add Product Button */}
         <div className="row mb-4">
           <div className="col-12">
             <button
@@ -382,7 +293,6 @@ const SellerDashboard = () => {
           </div>
         </div>
 
-        {/* Add Product Form */}
         {showAddProduct && (
           <div className="row mb-4">
             <div className="col-12">
@@ -484,7 +394,6 @@ const SellerDashboard = () => {
           </div>
         )}
 
-        {/* My Products */}
         <div className="row mb-4">
           <div className="col-12">
             <h4 className="mb-3 fw-bold">📦 My Products</h4>
